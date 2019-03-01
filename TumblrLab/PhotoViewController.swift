@@ -60,7 +60,7 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let urlString = originalSize["url"] as! String
             let url = URL(string: urlString)
             cell.photoView.af_setImage(withURL: url!)
-            
+        
         }
         
         return cell
@@ -76,17 +76,9 @@ class PhotoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let indexPath = tableView.indexPath(for: cell)!
         let thisPhoto = posts[indexPath.row]
        
-        let altSizes = thisPhoto["photos"] as! [[String:Any]]
-        let alt1 = altSizes[0]
-        let firstSize = alt1["original_size"] as! [String:Any]
-        let urlString = firstSize["url"] as! String
-//
         let vc = segue.destination as! PhotoDetailsViewController
        
-        vc.photo = urlString
-//        print("1")
-//        print(urlString)
-//        print(vc.photo)
+        vc.photo = thisPhoto
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

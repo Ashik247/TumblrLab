@@ -13,16 +13,22 @@ class PhotoDetailsViewController: UIViewController {
     
     @IBOutlet weak var detailPhotoView: UIImageView!
     
-    var photo: String!
+    var photo: [String:Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+            let altSizes = photo["photos"] as! [[String:Any]]
+            let alt1 = altSizes[0]
+            let firstSize = alt1["original_size"] as! [String:Any]
+            let urlString = firstSize["url"] as! String
+            let url = URL(string: urlString)
+            detailPhotoView.af_setImage(withURL: url!)
         
 //        print(photo)
-        let url = URL(string: photo)
-        detailPhotoView.af_setImage(withURL: url!)
-        
+//        let url = URL(string: photo)
+//        detailPhotoView.af_setImage(withURL: url!)
+//
         
     
     

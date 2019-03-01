@@ -38,7 +38,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoView" destination="NOR-TZ-uz3" id="tgd-kG-IN3"/>
-                                            <segue destination="Ypp-2C-Tqu" kind="show" id="mAR-pt-hVB"/>
+                                            <segue destination="Ypp-2C-Tqu" kind="show" identifier="loadDetails" id="mAR-pt-hVB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
